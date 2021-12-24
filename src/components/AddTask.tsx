@@ -1,13 +1,15 @@
 import React from 'react'
 import {useState} from 'react'
 import Task from './Task'
-
-const AddTask = ({addTask}) => {
+interface Props {
+    addTask: Function
+}
+const AddTask:React.FC<Props>= ({addTask}) => {
     const [text, setText] = useState('');
     const [day, setDay] = useState('');
     const [reminder, setReminder] = useState(false);
 
-    const onSubmit = (e) => {
+    const onSubmit = (e: any) => {
         e.preventDefault();
         if(!text){
             alert('Please add a task')
@@ -45,7 +47,6 @@ const AddTask = ({addTask}) => {
                 <input 
                     type = 'checkbox'
                     checked = {reminder}
-                    value = {reminder}
                     onChange = {(e)=>setReminder(e.currentTarget.checked)}/>
             </div>
             <div>

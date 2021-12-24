@@ -1,8 +1,11 @@
 import React from 'react'
-import Button from './Button.js'
+import Button from './Button'
 import {useState} from 'react'
-
-const Header = ({title = "default title", onAdd}) => {
+interface Props{
+    title: string,
+    onAdd: Function
+}
+const Header:React.FC<Props> = ({title = "default title", onAdd}) => {
     const [isAdd, setIsAdd] = useState(true)
     const enableAddTask = () => {
         onAdd();

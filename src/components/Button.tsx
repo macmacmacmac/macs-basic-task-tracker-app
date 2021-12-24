@@ -1,6 +1,11 @@
 import React from 'react'
 
-const Button = ({text = "default button text", onClick, color}) => {
+interface Props{
+    text: string,
+    onClick: any,
+    color: string
+}
+const Button:React.FC<Props> = ({text,onClick,color}) => {
     return (
         <button 
             className = 'btn'
